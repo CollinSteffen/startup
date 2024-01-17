@@ -30,4 +30,11 @@ This would be used specifically to make the site more aesthetically pleasing. Th
 ### JavaScript
 This would be the script to save data, activate different changes in the webpage, and create little animations depending on what the user in hovering over or initiating.
 
+### Websockets
+While the artists would post on their page, all of that data would be stored on the cloud. This would obviously be updated after the class but would be the initial use of the websocket as the consumer/user would navigate to these profiles which are hosted by the server itself.
 
+### Database Data
+All artist data, inlcuding **RAW** images. This would be upgraded if the app increases in use and popularity. There will be two different accounts stored, the *users* and the *artists*. Each account bits of data would be stored on the database which the server will pull from in order to provide the products.
+
+### Authentication
+Both *Users* and the *artists* will have their own accounts. The *artists* will have a *buisness* account profile that would allow them to be able to post their work and monetize it. The *users* will just have a consumer account that will allow them to search in history and purchase with the card they have already used previously.
