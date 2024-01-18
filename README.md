@@ -19,6 +19,7 @@ When a person clicks on the boxes that highlight the portrait of the artist, the
 
 ### Each Specific Post
 when someone decides to click on a specific post/art piece, they will be guided to another page where the users are able to read a blog post about the art if they want. There will also be another option to directly buy the piece of art or a print thereof. there will be text boxes outlined, similar to the product pages of Amazon. 
+<img style = "float: left;" src= "Picdesc.jpeg 2024-01-18 02_00_39.png">
 
 
 ## The Technologies Used
