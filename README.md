@@ -8,7 +8,7 @@ In thinking of how to best demonstrate my expertise of building and running webs
 
 ## The Page
 
-<img style="float: right;" src="frontpage.jpeg">
+<img style="float: right;" src="Homepage.jpeg 2024-01-18 01_58_42.png">
 
 ### The Front Page
 The idea with the front page is to show off some of the more *well known* people mixed with the *unknown*. Like music librarys (i.e. *Spotify* and *Apple Music*), They incorporate a homepage that intorduces people that are well known throughout the music world (Drake and Morgan Wallen come to mind). they interweve them with other more obscure artists. To achieve this, we need to make the front page as aesthetically pleasing as possible, making different portraits of artists. There must be blocks that act as a box to be explored.
