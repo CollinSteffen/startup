@@ -41,3 +41,6 @@ All artist data, inlcuding **RAW** images. This would be upgraded if the app inc
 
 ### Authentication
 Both *Users* and the *artists* will have their own accounts. The *artists* will have a *buisness* account profile that would allow them to be able to post their work and monetize it. The *users* will just have a consumer account that will allow them to search in history and purchase with the card they have already used previously.
+
+### React
+This would be used to gather resources and build parts to the website.
