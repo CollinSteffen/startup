@@ -15,9 +15,11 @@ The idea with the front page is to show off some of the more *well known* people
 
 ### The Boxes
 When a person clicks on the boxes that highlight the portrait of the artist, they are taken to the profile of the artist. This is customizable by the artists themselves to a degree. like Instagram, they are able to post their art and people are able to look at them. They could contain a **short** blurb/header with the first look of the art.
+<img style = "float: right;" src = "Boxes.jpeg 2024-01-18 02_00_03.png">
 
 ### Each Specific Post
 when someone decides to click on a specific post/art piece, they will be guided to another page where the users are able to read a blog post about the art if they want. There will also be another option to directly buy the piece of art or a print thereof. there will be text boxes outlined, similar to the product pages of Amazon. 
+
 
 ## The Technologies Used
 
