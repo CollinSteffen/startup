@@ -44,3 +44,23 @@ Both *Users* and the *artists* will have their own accounts. The *artists* will 
 
 ### React
 This would be used to gather resources and build parts to the website.
+
+
+# STARTUP HTML
+## February 5, 2024
+After a week of editing the code and adding 5 different html pages that connect to each other, i have made the home page, the login page, the personal account page, a profile page, and an about page. All of which utilize different syntactic structures giving each page a new feel from the last and organizing it all. I currently have all of them attached to one css page and one javascript page although this may change in the future when it gets more complex.
+
+### index.html
+This is the homepage and contains links to several different pages. this will have the feature to look at featured people and their art. This will be expanded on later as i left place holders that will be edited using css.
+
+### about.html
+This page will allow users to read about the website and will be navigable on all pages in the footer section of each page.
+
+### login.html
+This is a login page that has two text boxes for the username and password. it is a simple page that really wont have much to change or add.
+
+### myAccount.html
+This account will be similar to the profile page but include more features such as settings and what not. This page will be heavily customized and only be accessible if the conditions in the login are met. It will have the accounts post and other buisness oriented items.
+
+### profile.html
+The final one I added allows for the user to look at other profiles that are not their own and be able to explore other profiles. this will have different posts and buisness features attached but nothing to actually manage the profile.
