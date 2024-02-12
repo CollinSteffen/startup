@@ -16,7 +16,7 @@
     background-color: hotpink;
     text-align: center;
     color: white;
-    box-sizing: content-box;
+    box-sizing:unset;
     border-radius: 5px;
 }
 
