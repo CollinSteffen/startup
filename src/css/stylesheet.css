@@ -8,7 +8,7 @@
     padding: 20px;
     text-align: center;
     background-color: #4431d4;
-    opacity: 30%;
+    opacity: 50%;
 }
 h1{
     opacity: 170%;
@@ -31,9 +31,9 @@ h4{
 }
 
 /*----------------the decoration for the side panel---------------------*/
-.sidepanel{
+.sidepanel {
     height: 100%;
-    width: 0;
+    width: 200px; 
     position: fixed;
     z-index: 1;
     top: 0;
@@ -42,7 +42,14 @@ h4{
     overflow-x: hidden;
     padding-top: 60px;
     transition: .5s;
-    opacity: 95%;
+    opacity: 100%;
+}
+
+.openbtn{
+    opacity: 0%;
+    background-color: #d83f87;
+    color: white;
+    border-radius: 0%;
 }
 
 .sidepanel a {
@@ -56,6 +63,62 @@ h4{
 
 .sidepanel a:hover {
     color: #140d0d;
+}
+
+@media screen and (max-width: 768px) {
+    .sidepanel {
+        width: 0; /* Hide the side panel by default */
+        overflow: hidden;
+        opacity: 90%;
+    }
+
+
+    .sidepanel a.right {
+        display: block; /* Display the button to open/close the side panel */
+    }
+
+    .openbtn{
+        opacity: 100%;
+        border-color: #d83f87;
+    }
+    
+    .closebtn{
+        opacity: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    
+    .sidepanel {
+        height: 100%;
+        width: 200px; 
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(149, 80, 156);
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: .5s;
+        opacity: 100%;
+    }
+
+    .sidepanel a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #000000;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidepanel a:hover {
+        color: #140d0d;
+    }
+
+    .closebtn{
+        opacity: 0%;
+    }
 }
 
 /*----------------the decoration for the cards---------------------*/
@@ -116,6 +179,12 @@ h4{
     float: center;
 }
 
+.card-profile{
+    border-radius: 100%;
+    max-width: 20%;
+    aspect-ratio: 1;
+
+}
 /*----------------the decoration for the nav bar---------------------*/
 .navbar{
     overflow: hidden;
