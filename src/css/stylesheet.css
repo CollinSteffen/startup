@@ -1,6 +1,7 @@
 :root {
     background-color: #2a1b3d;
     flex: auto;
+    color: white;
 }
 
 .header{
@@ -10,10 +11,13 @@
     color: white;
 }
 
+h4{
+    float: center;
+}
 
 /*----------------the decoration for the side panel---------------------*/
 .sidepanel{
-    height:auto;
+    height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -39,10 +43,17 @@
 }
 
 /*----------------the decoration for the cards---------------------*/
+*{
+    box-sizing: border-box;
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.5s;
-    width: 30%;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    clear: both;
 }
 
 .card:hover {
@@ -54,13 +65,14 @@
 }
 
 .column{
-    float: left;
-    width: 25%;
-    padding: 0 10px;
+    float: right;
+    width: 40%;
+    padding: 10 10px;
+    background-color: #d83f87;
 }
 
 .row{
-    margin: 0 -5px;
+    margin: 5 -5px;
 }
 
 .row:after {
@@ -75,6 +87,10 @@
         display: block;
         margin-bottom: 20px;
     }
+}
+
+.cardtitle{
+    float: center;
 }
 
 .navbar{
