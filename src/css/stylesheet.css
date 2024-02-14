@@ -175,3 +175,9 @@ h4{
     padding: 60px, 60px, 60px, 60px;
     margin: 20px;
 }
+
+/*----------------the decoration for the about---------------------*/
+
+.about-text{
+    text-align: center;
+}
