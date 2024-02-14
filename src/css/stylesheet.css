@@ -1,36 +1,85 @@
 :root {
-    background-color: #E9DCC9;
+    background-color: #2a1b3d;
     flex: auto;
 }
 
 .header{
-    padding: 80px;
+    padding: 20px;
     text-align: center;
-    background-color: aquamarine;
+    background-color: #4431d4;
     color: white;
 }
 
-.card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+/*----------------the decoration for the side panel---------------------*/
+.sidepanel{
+    height:auto;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4431d4;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: .5s;
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
     transition: 0.3s;
-    background-color: hotpink;
-    text-align: center;
-    color: white;
-    box-sizing:unset;
-    border-radius: 5px;
 }
 
-.card:hover{
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+
+/*----------------the decoration for the cards---------------------*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    width: 30%;
+}
+
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container{
+.container {
     padding: 2px 16px;
+}
+
+.column{
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+.row{
+    margin: 0 -5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
 }
 
 .navbar{
     overflow: hidden;
-    background-color: darkgrey;
+    background-color: #a4b3b6;
     position: sticky;
     position: -webkit-sticky;
     top: 0;

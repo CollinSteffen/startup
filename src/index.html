@@ -14,41 +14,57 @@
         </div>
         <div>
             <nav class="navbar">
+                <a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
                 <a href="login.html">Login</a>
                 <a href="https://github.com/CollinSteffen/CS260.git">Collin Steffen's Github</a>
             </nav>
         </div>
-        
     </header>
 
-    <div class="side">
-        <nav>
-            <a href="">Home</a>
-            <a href="myAccount.html">My Account</a>
-        </nav>
-    </div>
+    
 
     <main class="body">
-        <div class="card">
-            <img src="stockImages/expic2.JPG" alt="Avatar" style="width:50%">
-            <div class="container">
-              <h4><b>profile1</b></h4>
-              <p></p>
-            </div>
-        </div> 
-        <div class="card">
-            <img src="stockImages/expic1.JPG" alt="Avatar" style="width:50%">
-            <div class="container">
-              <h4><b>profile2</b></h4>
-              <p></p>
+        
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+
+        <button class="openbtn" onclick="openNav()">&#9776; Toggle Sidepanel</button>
+
+        <div class="column">
+            <div class="row">
+                <div class="card">
+                    <img src="stockImages/expic2.JPG" alt="Avatar" style="width:100%">
+                    <div class="container">
+                    <h4><b>profile1</b></h4>
+                    <p></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="container">
-              <h4><b>profile3</b></h4>
-              <p></p>
-              <img src="stockImages/HDpic1.jpg" alt="Avatar" style="width:50%">
+        <div class="column">
+            <div class="row"> 
+                <div class="card">
+                    <img src="stockImages/expic1.JPG" alt="Avatar" style="width:100%">
+                    <div class="container">
+                    <h4><b>profile2</b></h4>
+                    <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <div class="card">
+                    <div class="container">
+                    <h4><b>profile3</b></h4>
+                    <p></p>
+                    <img src="stockImages/HDpic1.jpg" alt="Avatar" style="width:100%">
 
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -70,6 +86,6 @@
         </nav>
     </footer>
 
-    <script href="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
