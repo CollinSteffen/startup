@@ -8,7 +8,6 @@
     padding: 20px;
     text-align: center;
     background-color: #4431d4;
-    color: white;
 }
 
 h4{
@@ -46,7 +45,9 @@ h4{
 *{
     box-sizing: border-box;
 }
-
+.cardimages{
+    object-fit: scale-down;
+}
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.5s;
@@ -54,6 +55,7 @@ h4{
     padding: 16px;
     text-align: center;
     clear: both;
+    background-color: #d83f87;
 }
 
 .card:hover {
@@ -67,12 +69,11 @@ h4{
 .column{
     float: right;
     width: 40%;
-    padding: 10 10px;
-    background-color: #d83f87;
+    padding: 0 10px;
 }
 
 .row{
-    margin: 5 -5px;
+    margin: 0 -5px;
 }
 
 .row:after {
