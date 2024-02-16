@@ -64,3 +64,23 @@ This account will be similar to the profile page but include more features such 
 
 ### profile.html
 The final one I added allows for the user to look at other profiles that are not their own and be able to explore other profiles. this will have different posts and buisness features attached but nothing to actually manage the profile.
+
+
+# STARTUP CSS
+## February 14, 2024
+After a week of editing the code and adding CSS to the 5 different html pages that connect to each other, i have decorated the home page, the login page, the personal account page, a profile page, and an about page. All of which utilize different syntactic structures giving each page a new feel from the last and organizing it all. I currently have all of of my HTML pages attached to one css page and one javascript page although this may change in the future when it gets more complex.
+
+### Cards
+I created and formated cards so that it would prominently display an image, a profile picture, and the profile name. 
+
+### side bar
+this will take extra time to fletch out with links to others. This displays certain links like home and about. It also can be closed with a button and opened with a button, both of which will appear when the screen shrinks to a specific size. 
+
+### navigation bar
+This sits below the header and holds (currently) the login link and the GitHub repo. The links will change colors depending on if the user hovers the mouse over them.
+
+### Login Page
+Finished some formatting of the login page that will be devoloped on later.
+
+### General formating
+Placed the nav bar below the header. Placed the side bar on the side. Placed the cards on the right of the page so they could be used in a grid like manner.
