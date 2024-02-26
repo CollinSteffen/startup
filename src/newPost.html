@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arttrinsic - Login</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Arttrinsic</h1>
+            <h2>The Place where art is Valued</h2>
+        </div>
+        <div>
+            <nav class="navbar">
+                <a href="login.html" style="float: right;">Login</a>
+                <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
+            </nav>
+        </div>
+    </header>
+
+    
+
+    <main class="body" style="float: center;">
+        
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+
+
+        <div class="newPost-box" style="float: center;">
+            <h2>New Post</h2>
+            <div class="upload-image" style="float: left;">
+                <img src="" alt="">
+            </div>
+
+            <form class="newPost-inputs" style="float: right;">
+                <label for="post-title">Title</label>
+                <input type="text" id="newPost-title"><br><br>
+                <label for="post-desc">Description</label>
+                <input type="text" id="newPost-desc"><br><br>
+                <input type="submit" value="Post">
+            </form>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

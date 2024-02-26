@@ -9,7 +9,14 @@
     text-align: center;
     background-color: #4431d4;
     opacity: 50%;
+    margin-left: 20%;
 }
+
+
+@media screen and (max-width: 768px) {
+
+}
+
 h1{
     opacity: 170%;
 }
@@ -28,15 +35,13 @@ h4{
     padding: 20px;
     max-height: 100%;
     opacity: 100%;
-    background-image: url("../stockImages/background.jpg") repeat;
     
 }
 
 /*----------------the decoration for the side panel---------------------*/
 .sidepanel {
     height: 100%;
-    width: 200px; 
-    margin-top: calc(30% - 28px);
+    width: 20%; 
     position: absolute;
     z-index: 1;
     top: 0;
@@ -54,6 +59,7 @@ h4{
     color: white;
     border-radius: 0%;
 }
+
 
 .sidepanel a {
     padding: 8px 8px 8px 32px;
@@ -193,8 +199,9 @@ h4{
     overflow: hidden;
     background-color: #d83f87;
     position: sticky;
-    position: -webkit-sticky;
     top: 0;
+    border-radius: 5px;
+    margin-left: 20%;
 }
 
 .navbar a{
@@ -211,7 +218,7 @@ h4{
 }
 
 .navbar a:hover{
-    background-color: black;
+    background-color: lightgrey;
     color: grey;
 }
 
@@ -252,4 +259,28 @@ h4{
 
 .about-text{
     text-align: center;
+}
+
+/*---------------decoration for the make post page------------------*/
+.newPost-box{
+    float: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    color: black;
+    max-width: 50%;
+    max-height: 50%;
+    padding: 45px, 45px, 45px, 45px;
+    margin: auto;
+    background-color: #d83f87;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    z-index: 1;
+    opacity: 90%;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 0 rgba(0,0,0,0.24);
+    border-radius: 15px;
+}
+
+.newPost-inputs{
+    background-color: #d83f87;
 }
