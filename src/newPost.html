@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arttrinsic - Login</title>
+    <title>Arttrinsic - New Post</title>
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
@@ -16,34 +16,21 @@
             <nav class="navbar">
                 <a href="login.html" style="float: right;">Login</a>
                 <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
+                <a href="index.html">Home</a>
             </nav>
         </div>
     </header>
 
-    
-
-    <main class="body" style="float: center;">
-        
-        <button class="openbtn" onclick="openNav()">&#9776;</button>
-        
-        <div id="mySidepanel" class="sidepanel">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-        </div>
-
-
-        <div class="newPost-box" style="float: center;">
+    <main class="body">
+        <div class="newPost-box">
             <h2>New Post</h2>
-            <div class="upload-image" style="float: left;">
-                <img src="" alt="">
-            </div>
-
-            <form class="newPost-inputs" style="float: right;" onsubmit="createPost()">
-                <label for="post-title">Title</label>
-                <input type="text" id="newPost-title"><br><br>
-                <label for="post-desc">Description</label>
+            <form class="newPost-inputs" onsubmit="createPost()">
+                <label for="newPost-profile">Profile</label>
+                <input type="text" id="newPost-profile"><br><br>
+                <label for="newPost-desc">Description</label>
                 <input type="text" id="newPost-desc"><br><br>
+                <label for="newPost-img">Image URL</label>
+                <input type="text" id="newPost-img"><br><br>
                 <input type="submit" value="Post">
             </form>
         </div>
