@@ -13,8 +13,8 @@ class Post {
         <div class="card">
             <div class="container">
                 <img src="${this.profile}" alt="Avatar" class="card-profile">
-                <h4><b class="cardtitle">${this.author}</b></h4>
-                <img src="${this.img}" alt="post" style="width:100%" class="cardimages">
+                <h4><b class="cardtitle">${this.author}</b></h4>'
+                <img src="${this.img}" alt="post" style="width:100%" class="cardimages">'
             </div>
         </div>
         `;
