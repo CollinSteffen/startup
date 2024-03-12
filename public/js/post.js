@@ -4,8 +4,8 @@ class Post {
         this.date = date
         this.desc = desc
         this.id = id
-        this.img = img; // Fix: Assign the img parameter to this.img
-        this.profile = profile; // Fix: Assign the profile parameter to this.profile
+        this.img = img;
+        this.profile = profile;
     }
     toHTML(){
         const statusClass = this.done ? 'task-done' : '';
@@ -22,27 +22,27 @@ class Post {
 }
 
 function updateStorage(newData) {
-    localStorage.setItem('posts', JSON.stringify(newData)); // Fix: Change 'tasks' to 'posts'
+    localStorage.setItem('posts', JSON.stringify(newData)); 
 }
 
 function readStorage(){
-    const jsonString = localStorage.getItem('posts'); // Fix: Change 'tasks' to 'posts'
+    const jsonString = localStorage.getItem('posts');
     let result = JSON.parse(jsonString) || [];
-    result = result.map(postData => new Post(postData)); // Fix: Change 'Task' to 'Post'
+    result = result.map(postData => new Post(postData));
     return result;
 }
 
 function createPost() {
     event.preventDefault();
-    const desc = document.getElementById('newPost-desc').value; // Fix: Change 'desc' to 'newPost-desc'
-    const img = document.getElementById('newPost-img').value; // Fix: Change 'img' to 'newPost-img'
-    const profile = document.getElementById('newPost-profile').value; // Fix: Add profile input field
+    const desc = document.getElementById('newPost-desc').value; 
+    const img = document.getElementById('newPost-img').value; 
+    const profile = document.getElementById('newPost-profile').value;
 
-    if (desc === ''){ // Fix: Change 'text' to 'desc'
-        alert('Please enter a description...'); // Fix: Change 'task' to 'description'
+    if (desc === ''){ 
+        alert('Please enter a description...');
         return;
     }
-    const newPost = new Post({author: profile, date: Date.now(), desc, id: Date.now(), img, profile}); // Fix: Change 'Task' to 'Post'
+    const newPost = new Post({author: profile, date: Date.now(), desc, id: Date.now(), img, profile}); 
     const existingPosts = readStorage();
     existingPosts.push(newPost);
     updateStorage(existingPosts);
@@ -63,3 +63,21 @@ function readPosts() {
 document.addEventListener('DOMContentLoaded', () => {
     readPosts();
 });
+
+function submitPost(postData) {
+    fetch('/api/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Post submitted successfully:', data);
+    })
+    .catch(error => {
+      console.error('Error submitting post:', error);
+    });
+  }
+  
