@@ -84,3 +84,16 @@ Finished some formatting of the login page that will be devoloped on later.
 
 ### General formating
 Placed the nav bar below the header. Placed the side bar on the side. Placed the cards on the right of the page so they could be used in a grid like manner.
+
+# STARTUP JavaScript
+## March 11, 2024
+After having major computer issues that lead to a delay of this being done, i was able to implement several different scripts that would be used to create posts, 'log' people in, and to have a side bar that will expand with more options.
+
+### login.js
+this uses the base code found in simon-javascript in order to simply log someone in using local storage.
+
+### Post.js
+This allows one to create a post that will update other pages using local storage. parts of this are not fully implemented as it requires backend work that can take from some storage place and dynamically update the index.html page.
+
+### Script.js
+this is just a simple page that only has the the script for the side bar opening and closing. this may be changed in future updates, however.
