@@ -1,0 +1,11 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "With so many people wanting to monetize their art and paying for a website themselves is a hard thought option, it is time for a platform to have artists monetize their products and gain the traction they need. My website would allow artists to monetize their products allowing them to actually get the credit they worked hard to achieve.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
