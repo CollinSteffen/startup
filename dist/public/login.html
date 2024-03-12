@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arttrinsic - Login</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Arttrinsic</h1>
+            <h2>The Place where art is Valued</h2>
+        </div>
+        <div>
+            <nav class="navbar">
+                <a href="login.html" style="float: right;">Login</a>
+                <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="body" style="float: center;">
+        
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+        <div class="login" style="float: center;">
+            <form class="login-input" onsubmit="login(event)">
+                <h2>Username:</h2>
+                <input type="text" class="width" id="username"/><br />
+                <h2>Password:</h2>
+                <input type="password" id="password"/><br />
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+        
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+    </main>
+
+    <script src="js/post.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

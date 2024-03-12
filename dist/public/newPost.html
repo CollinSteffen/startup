@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arttrinsic - New Post</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Arttrinsic</h1>
+            <h2>The Place where art is Valued</h2>
+        </div>
+        <div>
+            <nav class="navbar">
+                <a href="login.html" style="float: right;">Login</a>
+                <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
+                <a href="index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="body">
+        <div class="newPost-box">
+            <h2>New Post</h2>
+            <form class="newPost-inputs" onsubmit="createPost(event)">
+                <label for="newPost-profile">Profile</label>
+                <input type="text" id="newPost-profile"><br><br>
+                <label for="newPost-desc">Description</label>
+                <input type="text" id="newPost-desc"><br><br>
+                <label for="newPost-img">Image</label>
+                <input type="file" id="fileInput" name="file" accept=".png, .jpeg, .jpg" onchange="uploadFile(this)"><br><br>
+                <input type="submit" value="Post">
+            </form>
+        </div>
+    </main>
+    <script src="js/post.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
