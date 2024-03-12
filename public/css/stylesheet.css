@@ -38,11 +38,11 @@ h4{
     
 }
 
-/*----------------the decoration for the side panel---------------------*/
+/* Default styles for side panel */
 .sidepanel {
     height: 100%;
-    width: 20%; 
-    position: absolute;
+    width: 200px; /* Set the default width */
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
@@ -53,14 +53,20 @@ h4{
     opacity: 100%;
 }
 
-.openbtn{
-    opacity: 0%;
+/* Styles for the button to open the side panel */
+.openbtn {
+    opacity: 100%;
     background-color: #d83f87;
     color: white;
     border-radius: 0%;
 }
 
+/* Styles for closing button */
+.closebtn {
+    opacity: 100%;
+}
 
+/* Styles for links inside the side panel */
 .sidepanel a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -74,59 +80,25 @@ h4{
     color: #140d0d;
 }
 
+/* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     .sidepanel {
-        width: 0; /* Hide the side panel by default */
+        width: 0; /* Hide the side panel on smaller screens */
         overflow: hidden;
         opacity: 90%;
     }
-
 
     .sidepanel a.right {
         display: block; /* Display the button to open/close the side panel */
     }
 
-    .openbtn{
+    .openbtn {
         opacity: 100%;
         border-color: #d83f87;
     }
     
-    .closebtn{
+    .closebtn {
         opacity: 100%;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    
-    .sidepanel {
-        height: 100%;
-        width: 200px; 
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: rgb(149, 80, 156);
-        overflow-x: hidden;
-        padding-top: 60px;
-        transition: .5s;
-        opacity: 100%;
-    }
-
-    .sidepanel a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #000000;
-        display: block;
-        transition: 0.3s;
-    }
-
-    .sidepanel a:hover {
-        color: #140d0d;
-    }
-
-    .closebtn{
-        opacity: 0%;
     }
 }
 
