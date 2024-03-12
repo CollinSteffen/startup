@@ -1,3 +1,14 @@
+function openNav(){
+    document.getElementById("mySidepanel").style.width = "12%";
+    document.getElementsByClassName("openbtn").style.opacity = "0%";
+}
+
+function closeNav(){
+    document.getElementById("mySidepanel").style.width = "0%";
+    document.getElementsByClassName("openbtn").style.opacity = "100%";
+}
+
+
 class Post {
     constructor({author, date, desc, id, img, profile}){
         this.author = author
@@ -8,7 +19,6 @@ class Post {
         this.profile = profile;
     }
     toHTML(){
-        const statusClass = this.done ? 'task-done' : '';
         return `
         <div class="card">
             <div class="container">
@@ -21,16 +31,16 @@ class Post {
     }
 }
 
-function updateStorage(newData) {
-    localStorage.setItem('posts', JSON.stringify(newData)); 
-}
+// function updateStorage(newData) {
+//     localStorage.setItem('posts', JSON.stringify(newData)); 
+// }
 
-function readStorage(){
-    const jsonString = localStorage.getItem('posts');
-    let result = JSON.parse(jsonString) || [];
-    result = result.map(postData => new Post(postData));
-    return result;
-}
+// function readStorage(){
+//     const jsonString = localStorage.getItem('posts');
+//     let result = JSON.parse(jsonString) || [];
+//     result = result.map(postData => new Post(postData));
+//     return result;
+// }
 
 async function createPost(event) {
     event.preventDefault();
@@ -111,7 +121,7 @@ function submitPost(postData) {
     .catch(error => {
       console.error('Error submitting post:', error);
     });
-  }
+}
   
   async function uploadFile(fileInput) {
     const file = fileInput.files[0];
@@ -131,5 +141,5 @@ function submitPost(postData) {
         alert(data.message);
       }
     }
-  }
+}
 

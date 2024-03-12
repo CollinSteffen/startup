@@ -1,6 +1,15 @@
+function openNav(){
+    document.getElementById("mySidepanel").style.width = "12%";
+    document.getElementsByClassName("openbtn").style.opacity = "0%";
+}
+
+function closeNav(){
+    document.getElementById("mySidepanel").style.width = "0%";
+    document.getElementsByClassName("openbtn").style.opacity = "100%";
+}
 
 function displayQuote(data) {
-fetch('https://api.quotable.io/random')
+    fetch('https://api.quotable.io/random')
     .then((response) => response.json())
     .then((data) => {
     const containerEl = document.querySelector('#quote');
@@ -17,3 +26,5 @@ fetch('https://api.quotable.io/random')
     containerEl.appendChild(authorEl);
     });
 }
+
+displayQuote();

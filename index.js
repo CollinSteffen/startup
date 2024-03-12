@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const fs = require('fs');
 
 const app = express();
 
@@ -28,6 +29,8 @@ const upload = multer({
 // Define API routes
 const apiRouter = express.Router();
 
+let posts = [];
+
 // GetPosts
 apiRouter.get('/posts', (_req, res) => {
   res.send(posts);
@@ -35,8 +38,9 @@ apiRouter.get('/posts', (_req, res) => {
 
 // SubmitPost
 apiRouter.post('/posts', (req, res) => {
-  posts = updatePosts(req.body, posts);
-  res.send(posts);
+  const newPost = req.body;
+  posts.push(newPost);
+  res.json(posts);
 });
 
 app.use('/api', apiRouter);
@@ -72,13 +76,32 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
+// // Function to update posts
+// function updatePosts(newPost, posts) {
+//   posts.push(newPost);
+//   return posts;
+// }
+
+app.post('/storeCredentials', (req, res) => {
+  const { username, password } = req.body;
+  const credentials = { username, password };
+  const jsonContent = JSON.stringify(credentials);
+
+  // Write to the JSON file
+  fs.writeFile('credentials.json', jsonContent, 'utf8', (err) => {
+    if (err) {
+      console.error('An error occurred while writing to file:', err);
+      res.status(500).send('Error storing credentials');
+      return;
+    }
+    console.log('Credentials stored successfully.');
+    res.status(200).send('Credentials stored successfully');
+  });
+});
+
+
+
 // Start server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-// Function to update posts
-function updatePosts(newPost, posts) {
-  posts.push(newPost);
-  return posts;
-}
