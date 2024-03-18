@@ -114,5 +114,11 @@ this would store credentials in a json file and would be added to by the registe
 ### index.js
 This is the backend. It contains some of the functions that would store the credentials, new posts, handle uploads, among assigning ports and whatnot.
 
-### 
+### Profile.js / myaccount.js
+this is supposed to grab the information for the posts in the parent directory and put them in html format on a user page.
+
+### about.js
+this includes an api but does not do much outside of that.
+
+
 
