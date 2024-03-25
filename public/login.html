@@ -27,12 +27,13 @@
         <button class="openbtn" onclick="openNav()">&#9776;</button>
 
         <div class="login" style="float: center;">
-            <form class="login-input" onsubmit="login(event)">
+            <form class="login-input">
                 <h2>Username:</h2>
                 <input type="text" class="width" id="username"/><br />
                 <h2>Password:</h2>
                 <input type="password" id="password"/><br />
-                <button type="submit" class="login-button">Login</button>
+                <button type="submit" class="login-button" onsubmit="loginUser(event)">Login</button>
+                <button type="submit" class="login-button" onsubmit="loginUser(event)">Register</button>
             </form>
         </div>
         
