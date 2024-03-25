@@ -97,3 +97,28 @@ This allows one to create a post that will update other pages using local storag
 
 ### Script.js
 this is just a simple page that only has the the script for the side bar opening and closing. this may be changed in future updates, however.
+
+# STARTUP Node.js
+## March 17, 2024
+Again the same issues did persist and i am quite ready to recieve my new computer in a couple weeks, i was able to attach my index.js from the parent directory to the inner javascript pages such as the newPost.js, login.js, etc.
+
+### newPost.js
+I connected the index.js file to the newPost.js and renamed it so that it would make a bit more sense to use and organize. I then changed all the locations where local storage would be used to something along the lines that it would take the information and store it in a json file.
+
+### login.js
+Similar thing here. I created a json file that would store the credentials in a credentials.json file. this would be temporary because of its insecure implementaion.
+
+### credentials.json
+this would store credentials in a json file and would be added to by the register.js file.
+
+### index.js
+This is the backend. It contains some of the functions that would store the credentials, new posts, handle uploads, among assigning ports and whatnot.
+
+### Profile.js / myaccount.js
+this is supposed to grab the information for the posts in the parent directory and put them in html format on a user page.
+
+### about.js
+this includes an api but does not do much outside of that.
+
+
+
