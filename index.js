@@ -3,8 +3,9 @@ const multer = require('multer');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const DB = require('./database.js');
-
 const app = express();
+
+const authCookieName = 'token';
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -75,6 +76,21 @@ apiRouter.get('/user/:email', async (req, res) => {
 var secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
 
+// GetUser returns information about a user
+apiRouter.get('/user/:email', async (req, res) => {
+  const user = await DB.getUser(req.params.email);
+  if (user) {
+    const token = req?.cookies.token;
+    res.send({ email: user.email, authenticated: token === user.token });
+    return;
+  }
+  res.status(404).send({ msg: 'Unknown' });
+});
+
+// secureApiRouter verifies credentials for endpoints
+var secureApiRouter = express.Router();
+apiRouter.use(secureApiRouter);
+
 secureApiRouter.use(async (req, res, next) => {
   authToken = req.cookies[authCookieName];
   const user = await DB.getUserByToken(authToken);
@@ -85,38 +101,20 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-// Set up multer for file uploads
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: 'uploads/',
-    filename: (req, file, cb) => {
-      const filetype = file.originalname.split('.').pop();
-      const id = Math.round(Math.random() * 1e9);
-      const filename = `${id}.${filetype}`;
-      cb(null, filename);
-    },
-  }),
-  limits: { fileSize: 64000 },
-});
-
-// Define API routes
-const apiRouter = express.Router();
-
-let posts = [];
-
 // GetPosts
-apiRouter.get('/posts', (_req, res) => {
+secureApiRouter.get('/posts', async (req, res) => {
+  const posts = await DB.getPosts();
   res.send(posts);
 });
 
 // SubmitPost
-apiRouter.post('/posts', (req, res) => {
-  const newPost = req.body;
-  posts.push(newPost);
-  res.json(posts);
+secureApiRouter.post('/post', async (req, res) => {
+  const score = { ...req.body, ip: req.ip };
+  await DB.addScore(posts);
+  const posts = await DB.getPosts();
+  res.send(posts);
 });
 
-app.use('/api', apiRouter);
 
 // Handle file uploads
 app.post('/upload', upload.single('file'), (req, res) => {
@@ -135,42 +133,15 @@ app.get('/file/:filename', (req, res) => {
   res.sendFile(__dirname + `/uploads/${req.params.filename}`);
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  if (err instanceof multer.MulterError) {
-    res.status(413).send({ message: err.message });
-  } else {
-    res.status(500).send({ message: err.message });
-  }
+// Default error handler
+app.use(function (err, req, res, next) {
+  res.status(500).send({ type: err.name, message: err.message });
 });
 
 // Default route
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
-
-// // Function to update posts
-// function updatePosts(newPost, posts) {
-//   posts.push(newPost);
-//   return posts;
-// }
-
-// app.post('/storeCredentials', (req, res) => {
-//   const { username, password } = req.body;
-//   const credentials = { username, password };
-//   const jsonContent = JSON.stringify(credentials);
-
-//   // Write to the JSON file
-//   fs.writeFile('credentials.json', jsonContent, 'utf8', (err) => {
-//     if (err) {
-//       console.error('An error occurred while writing to file:', err);
-//       res.status(500).send('Error storing credentials');
-//       return;
-//     }
-//     console.log('Credentials stored successfully.');
-//     res.status(200).send('Credentials stored successfully');
-//   });
-// });
 
 
 // setAuthCookie in the HTTP response
@@ -184,5 +155,5 @@ function setAuthCookie(res, authToken) {
 
 // Start server
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Listening on port ${port}`);
 });
