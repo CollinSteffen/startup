@@ -115,33 +115,43 @@ secureApiRouter.post('/post', async (req, res) => {
   res.send(posts);
 });
 
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, 'uploads/');
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname);
+//   }
+// });
 
-// Handle file uploads
-app.post('/upload', upload.single('file'), (req, res) => {
-  if (req.file) {
-    res.send({
-      message: 'Upload succeeded',
-      file: req.file.filename,
-    });
-  } else {
-    res.status(400).send({ message: 'Upload failed' });
-  }
-});
+// const upload = multer({storage: storage});
 
-// Serve uploaded files
-app.get('/file/:filename', (req, res) => {
-  res.sendFile(__dirname + `/uploads/${req.params.filename}`);
-});
+// // Handle file uploads
+// app.post('/upload', upload.single('file'), (req, res) => {
+//   if (req.file) {
+//     res.send({
+//       message: 'Upload succeeded',
+//       file: req.file.filename,
+//     });
+//   } else {
+//     res.status(400).send({ message: 'Upload failed' });
+//   }
+// });
 
-// Default error handler
-app.use(function (err, req, res, next) {
-  res.status(500).send({ type: err.name, message: err.message });
-});
+// // Serve uploaded files
+// app.get('/file/:filename', (req, res) => {
+//   res.sendFile(__dirname + `/uploads/${req.params.filename}`);
+// });
 
-// Default route
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
-});
+// // Default error handler
+// app.use(function (err, req, res, next) {
+//   res.status(500).send({ type: err.name, message: err.message });
+// });
+
+// // Default route
+// app.use((_req, res) => {
+//   res.sendFile('index.html', { root: 'public' });
+// });
 
 
 // setAuthCookie in the HTTP response
