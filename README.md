@@ -120,5 +120,17 @@ this is supposed to grab the information for the posts in the parent directory a
 ### about.js
 this includes an api but does not do much outside of that.
 
+# STARTUP Login.js
+### March 22, 2024
 
+### Login.js
+I added the scripts to allow for a user to login in or register to the webpage. this would first take the given username and password, encrypt the password, and then send the items to MongoDB.
 
+### MongoDB
+This added the database functionality allowing for full use of storing values and information based on certain key variables, most importantly being, login credentials.
+
+### index.js
+Added the backend code to make the previous two possible.
+
+### Login.html
+changed a few of the pieces of information to better simplify the development process.
