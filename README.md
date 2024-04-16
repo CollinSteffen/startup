@@ -134,3 +134,9 @@ Added the backend code to make the previous two possible.
 
 ### Login.html
 changed a few of the pieces of information to better simplify the development process.
+
+# STARTUP Websockets
+### index.js
+The main thing that was changed was that The index page should now display other posts from other creators from the platform. The Websocket in use is taking from the database and pasting the information that the webpage recieves through the api and returns the values associated with the user IDs.
+
+There were smaller changes to make the webpage more fluid although i am having trouble getting the webpage to work between online and offline use.
