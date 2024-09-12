@@ -19,7 +19,6 @@ class Post {
         this.profile = profile;
     }
     toHTML(){
-        const statusClass = this.done ? 'task-done' : '';
         return `
         <div class="card">
             <div class="container">

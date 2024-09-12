@@ -1,9 +1,9 @@
 const express = require('express');
-const multer = require('multer');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const DB = require('./database.js');
 const app = express();
+
 
 const authCookieName = 'token';
 
@@ -108,11 +108,16 @@ secureApiRouter.get('/posts', async (req, res) => {
 });
 
 // SubmitPost
-secureApiRouter.post('/post', async (req, res) => {
-  const score = { ...req.body, ip: req.ip };
-  await DB.addScore(posts);
-  const posts = await DB.getPosts();
-  res.send(posts);
+secureApiRouter.post('/posts', async (req, res) => {
+  try {
+      const post = req.body; // Assuming the request body contains the post data
+      await DB.addPost(post); // Add the new post to the database
+      const posts = await DB.getPosts(); // Retrieve all posts from the database
+      res.json(posts); // Send the updated list of posts as a response
+  } catch (error) {
+      console.error('Error adding post:', error);
+      res.status(500).send('Error adding post');
+  }
 });
 
 // const storage = multer.diskStorage({

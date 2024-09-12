@@ -13,7 +13,6 @@
         <div class="header">
             <h1>Arttrinsic</h1>
             <h2>The Place where art is Valued</h2>
-            <h3><script>getUserNameFromStorage()</script>, howdy partner</h3>
         </div>
         <div>
             <nav class="navbar">
@@ -21,11 +20,14 @@
                 <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
                 <a href="newPost.html">Make Post</a>
                 <a href="myAccount.html">Profile</a>
+                <a onclick="logout()">logout</a>
             </nav>
         </div>
     </header>
 
-    
+    <!-- Inside your homepage HTML -->
+    <div id="post-container"></div>
+
 
     <main class="body" id="post">
         
@@ -36,6 +38,8 @@
         </div>
 
         <button class="openbtn" onclick="openNav()">Toggle Sidepanel</button>
+
+
 
     </main>
     <script src="js/script.js"></script>

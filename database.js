@@ -9,6 +9,8 @@ const db = client.db('startup');
 const userCollection = db.collection('user');
 const scoreCollection = db.collection('post');
 
+
+
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
   await client.connect();
@@ -40,24 +42,24 @@ async function createUser(email, password) {
   return user;
 }
 
-function addPost(post) {
-  postCollection.insertOne(post);
+function addPosts(post) {
+  return scoreCollection.insertOne(post); // Returning the result of the insert operation
 }
 
 function getPosts() {
-  const query = { post: { $gt: 0, $lt: 900 } };
+  // Assuming you want to get all posts, sorted by date or any other appropriate field
+  const query = {}; // Query to get all posts
   const options = {
-    sort: { post: -1 },
-    limit: 10,
+    sort: { date: -1 }, // Sorting by date in descending order, adjust as per your requirement
+    limit: 10, // Limiting to 10 posts, adjust as per your requirement
   };
-  const cursor = scoreCollection.find(query, options);
-  return cursor.toArray();
+  return scoreCollection.find(query, options).toArray(); // Returning the result of find operation
 }
 
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addPost,
+  addPosts,
   getPosts,
 };

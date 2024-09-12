@@ -18,6 +18,7 @@
                 <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
                 <a href="newPost.html">Make Post</a>
                 <a href="myAccount.html">Profile</a>
+                <a onclick="logout()">logout</a>
             </nav>
         </div>
     </header>
@@ -27,14 +28,18 @@
         <button class="openbtn" onclick="openNav()">&#9776;</button>
 
         <div class="login" style="float: center;">
-            <form class="login-input">
-                <h2>Username:</h2>
-                <input type="text" class="width" id="username"/><br />
-                <h2>Password:</h2>
-                <input type="password" id="password"/><br />
-                <button type="submit" class="login-button" onsubmit="loginUser(event)">Login</button>
-                <button type="submit" class="login-button" onsubmit="loginUser(event)">Register</button>
-            </form>
+            <div id="loginControls">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">@</span>
+                  <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">🔒</span>
+                  <input class="form-control" type="password" id="userPassword" placeholder="password" />
+                </div>
+                <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+                <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+              </div>
         </div>
         
         <div id="mySidepanel" class="sidepanel">

@@ -18,6 +18,7 @@
                 <a href="https://github.com/CollinSteffen/startup.git">Collin Steffen's Github</a>
                 <a href="newPost.html">Make Post</a>
                 <a href="myAccount.html">Profile</a>
+                <a onclick="logout()">logout</a>
             </nav>
         </div>
     </header>
@@ -30,8 +31,6 @@
                 <input type="text" id="newPost-profile"><br><br>
                 <label for="newPost-desc">Description</label>
                 <input type="text" id="newPost-desc"><br><br>
-                <label for="newPost-img">Image</label>
-                <input type="file" id="fileInput" name="file" accept=".png, .jpeg, .jpg" onchange="uploadFile(this)"><br><br>
                 <input type="submit" value="Post">
             </form>
         </div>

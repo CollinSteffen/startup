@@ -9,17 +9,6 @@ function closeNav(){
 }
 
 // ------------------begin login functions-------------------
-(async () => {
-  const userName = localStorage.getItem('userName');
-  if (userName) {
-    document.querySelector('#playerName').textContent = userName;
-    setDisplay('loginControls', 'none');
-    setDisplay('playControls', 'block');
-  } else {
-    setDisplay('loginControls', 'block');
-    setDisplay('playControls', 'none');
-  }
-})();
 
 async function loginUser() {
   loginOrCreate(`/api/auth/login`);
@@ -42,7 +31,7 @@ async function loginOrCreate(endpoint) {
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
-    window.location.href = 'play.html';
+    window.location.href = 'index.html';
   } else {
     const body = await response.json();
     const modalEl = document.querySelector('#msgModal');
@@ -53,7 +42,7 @@ async function loginOrCreate(endpoint) {
 }
 
 function play() {
-  window.location.href = 'play.html';
+  window.location.href = 'index.html';
 }
 
 function logout() {

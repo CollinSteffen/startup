@@ -8,6 +8,12 @@ function closeNav(){
     document.getElementsByClassName("openbtn").style.opacity = "100%";
 }
 
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    }).then(() => (window.location.href = '/'));
+  }
 
 class Post {
     constructor({author, date, desc, id, img, profile}){
@@ -31,3 +37,36 @@ class Post {
         `;
     }
 }
+
+// Function to fetch posts from the API
+async function fetchPosts() {
+    try {
+        const response = await fetch('/posts');
+        if (!response.ok) {
+            throw new Error('Failed to fetch posts');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        return [];
+    }
+}
+
+// Function to render posts on the homepage
+async function renderPosts() {
+    try {
+        const posts = await fetchPosts();
+        const container = document.getElementById('post-container');
+        container.innerHTML = ''; // Clear previous posts if any
+
+        posts.forEach(post => {
+            const newPost = new Post(post); // Assuming Post class is accessible
+            container.innerHTML += newPost.toHTML();
+        });
+    } catch (error) {
+        console.error('Error rendering posts:', error);
+    }
+}
+
+// Call renderPosts when the page loads
+window.addEventListener('load', renderPosts);

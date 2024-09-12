@@ -8,6 +8,13 @@ function closeNav(){
     document.getElementsByClassName("openbtn").style.opacity = "100%";
 }
 
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    }).then(() => (window.location.href = '/'));
+  }
+
 function displayQuote(data) {
     fetch('https://api.quotable.io/random')
     .then((response) => response.json())
